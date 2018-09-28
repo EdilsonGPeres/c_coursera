@@ -16,17 +16,99 @@ int max (int a, int b) {
 }
 
 //Declare your rectangle structure here!
-
+  typedef struct{
+    int x;
+    int y;
+    int width;
+    int height;
+  } rectangle;
 
 rectangle canonicalize(rectangle r) {
   //WRITE THIS FUNCTION
+  if (r.width < 0){
+    r.x = r.x + r.width;
+    r.width = abs(r.width);
+  }
+  if (r.height < 0){
+    r.y = r.y + r.height;
+    r.height = abs(r.height);
+  }
   return r;
-}
+  }
 rectangle intersection(rectangle r1, rectangle r2) {
   //WRITE THIS FUNCTION
-  return r1;
-}
+  rectangle r;
+  rectangle rmaxX;
+  rectangle rminX;
+  rectangle rmaxY;
+  rectangle rminY;
+  
+  r1 = canonicalize(r1);
+  r2 = canonicalize(r2);
 
+  r.x = max(r1.x, r2.x);
+  r.y = max(r1.y, r2.y);
+  
+  if (r1.x >= r2.x){
+    rmaxX = r1;
+    rminX = r2;
+  }
+  else{
+    rmaxX = r2;
+    rminX = r1;
+  }
+
+  if (r1.y >= r2.y){
+    rmaxY = r1;
+    rminY = r2;
+  }
+  else{
+    rmaxY = r2;
+    rminY = r1;
+  }
+
+  if ((r1.x == r2.x)&&(r1.y == r2.y) && (r1.width == r2.width) && (r1.height == r2.height)){
+    r = r1;
+  }
+  else{
+    if (((rminX.x + rminX.width)<rmaxX.x) || ((rminX.x + rminX.width)>=rmaxX.x && (rminY.y + rminY.height)<rmaxY.y)){
+      r.width = 0;
+      r.height = 0;
+    }
+    else{
+      if ((rminX.x + rminX.width)==rmaxX.x){
+	r.width = 0;
+      }
+      else{
+	if ((rminX.x + rminX.width)>rmaxX.x && (rminX.x + rminX.width)<(rmaxX.x + rmaxX.width)){
+	  r.width = (rminX.x + rminX.width) - rmaxX.x;
+	}
+	else{
+	  if ((rminX.x + rminX.width)>rmaxX.x && (rminX.x + rminX.width)>=(rmaxX.x + rmaxX.width)){
+	    r.width = rmaxX.width;
+	  }
+	}
+      }
+
+      if ((rminY.y + rminY.height)==rmaxY.y){
+	r.height = 0;
+      }
+      else{
+	if ((rminY.y + rminY.height)>rmaxY.y && (rminY.y + rminY.height)<(rmaxY.y + rmaxY.height)){
+	  r.height = (rminY.y + rminY.height) - rmaxY.y;
+	}
+	else{
+	  if ((rminY.y + rminY.height)>rmaxY.y && (rminY.y + rminY.height)>=(rmaxY.y + rmaxY.height)){
+	      r.height = rmaxY.height;
+	    }
+	}
+      }
+    }
+  }
+    r1 = r;
+    return r1;
+
+}
 //You should not need to modify any code below this line
 void printRectangle(rectangle r) {
   r = canonicalize(r);
