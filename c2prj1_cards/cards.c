@@ -99,13 +99,13 @@ card_t card_from_num(unsigned c) {
 
   assert(c >= 0 && c < 52);
   
-  if (c%13 < 1){
+  if (c < 13){
     temp.value = c+2;
     temp.suit = SPADES;
-  } else if (c%13 >= 1 && c%13 < 2) {
+  } else if (c >= 13 && c < 26) {
     temp.value = c - 11;
     temp.suit = HEARTS;
-  } else if (c%13 >= 2 && c%13 < 3) {
+  } else if (c >= 26 && c < 39) {
     temp.value = c - 24;
     temp.suit = DIAMONDS;
   } else {
