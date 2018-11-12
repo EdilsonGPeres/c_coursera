@@ -8,7 +8,7 @@ void g(int x, int * y) {
   y = &x;
 }
 
-void f(int * a, int b) {
+void f(int *a, int b) {
   printf("In f, *a = %d, b = %d\n", *a, b);
   *a += b;
   b *= 2;
