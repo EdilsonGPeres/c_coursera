@@ -9,6 +9,7 @@ int main(void){
   size_t x3;
   size_t x4;
   size_t x5;
+
   int array1[] = {0, 1, 2, 2, 2, 3, 8, 4, 6};
   int array2[] = {1, 15, 2, 20, 8, 34, 12, 50, 2};
   int array3[] = {11, 3, 8, 4, 9, 11, 15, 28, 36};
@@ -21,7 +22,9 @@ int main(void){
   x3 = maxSeq(array3, 9);
   x4 = maxSeq(array4, 3);
   x5 = maxSeq(array5, 4);
-  if (x0==(size_t)0 && x1==(size_t)3 && x2==(size_t)2 && x3==(size_t)6 && x4==(size_t)3 && x5==(size_t)1) return EXIT_SUCCESS;
-
+  if (x0==(size_t)0 && x1==(size_t)3 && x2==(size_t)2 && x3==(size_t)6 && x4==(size_t)3 && x5==(size_t)1) {
+    printf("valor correto\n");
+    return EXIT_SUCCESS;
+    }
   return EXIT_FAILURE;	 
 }
