@@ -4,9 +4,15 @@
 
 void reverse(char * str) {
   //WRITE ME!
-  int n = strlen(str);
+  //  int n = strlen(str);
+  int n = 0;
   char auxBegin, auxEnd;
-  int j = n-1;
+  int j;
+
+  while (*(str+n) != '\0'){
+    n++;
+  }
+  j = n-1;
   
   for (int i=0;i<n/2;i++){
     auxBegin = str[i];
