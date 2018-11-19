@@ -7,6 +7,7 @@ void reverse(char * str) {
   int n = strlen(str);
   char auxBegin, auxEnd;
   int j = n-1;
+  str[n] = '\0';
   
   for (int i=0;i<=(n-1)/2;i++){
     auxBegin = str[i];
