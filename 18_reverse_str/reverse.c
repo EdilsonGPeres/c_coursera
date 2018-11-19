@@ -5,6 +5,7 @@
 void reverse(char * str) {
   //WRITE ME!
   //  int n = strlen(str);
+  if (str != NULL){
   int n = 0;
   char auxBegin, auxEnd;
   int j;
@@ -20,6 +21,7 @@ void reverse(char * str) {
     str[j] = auxBegin;
     str[i] = auxEnd;
     j--;
+  }
   }
 }
 
