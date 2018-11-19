@@ -8,7 +8,7 @@ void reverse(char * str) {
   char auxBegin, auxEnd;
   int j = n-1;
   
-  for (int i=0;i<n/2;i++){
+  for (int i=0;i<=(n-1)/2;i++){
     auxBegin = str[i];
     auxEnd = str[j];
     str[j] = auxBegin;
