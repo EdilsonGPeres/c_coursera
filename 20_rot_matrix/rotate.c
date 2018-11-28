@@ -29,31 +29,4 @@ void rotate(char matrix[10][10]){
       }
     }
  }
-  /*
-  matrix[0][0] = 'E';
-  matrix++;
-  matrix[0][0] = 'D';
-  matrix++;
-  matrix[0][0] = 'D';
-  matrix++;
-  matrix[0][0] = 'I';
-  matrix++;
-  matrix[0][0] = 'L';
-  matrix++;
-  matrix[0][0] = 'S';
-  matrix++;
-  matrix[0][0] = 'O';
-  matrix++;
-  matrix[0][0] = 'N';
-  matrix++;
-  matrix[0][0] = 'P';
-  matrix++;
-  matrix[0][0] = 'E';
-  matrix[0][1] = 'R';
-  matrix--;
-  matrix[0][1] = 'E';
-  matrix--;
-  matrix[0][1] = 'S';*/
-  
-  //matrix = myMatrix;
 }
